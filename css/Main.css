@@ -1,0 +1,601 @@
+/* var(--bg-color);
+var(--text-color)
+var(-svg-color) 
+
+
+var(--button-bg)
+var(--button-color) 
+
+var(--box-shadow)
+
+var(--svg-fill)
+var(--svg-shadow)
+*/
+
+:root {
+    --bg-color: rgb(246, 246, 246);
+    --text-color: black;
+    --button-bg:  rgb(61, 60, 64);
+    --button-color: white;
+    --box-shadow: rgba(0, 0, 0, 0.5);
+    --svg-fill: rgba(255, 255, 255, 0.8);
+    --svg-shadow:  rgba(0, 0, 0, 0.6);
+    --title-shad1: #ffffff;
+    --title-shad2: #000000;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transition: all 0.5s ease;
+}
+
+.innerContainer1, .innerContainer2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+a {
+    text-decoration: none;
+    z-index: 3;
+}
+
+.content1 {
+    display: grid;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+sup, p {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-family: monospace;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.title {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 6rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-shadow: 0 0 3px var(--title-shad1), 0 0 5px var(--title-shad2);
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+
+button svg {
+    margin: 0;
+    padding: 0;
+    padding: 5px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.themeDark svg:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.developer {
+    display: grid;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    margin-top: -20px;
+    text-align: right;
+    position: relative;
+    color: rgb(253, 163, 73);
+}
+
+.developer button {
+    top: 18px;
+}
+
+.themeLight{
+    visibility: hidden;
+    fill: white;
+    cursor: pointer;
+}
+
+.light {
+    fill: white;
+}
+
+.themeLight svg:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    fill: white;
+}
+
+.subTitle {
+    position: absolute;
+    top: 10px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.design {
+    position: absolute;
+    bottom: 40px;
+    left: -40px;
+    height: 70px;
+    z-index: 1;
+    fill: var(--svg-fill);
+    filter: drop-shadow(4px 5px 3px var(--svg-shadow));
+}
+
+.span1 {
+    font-size: 8rem; 
+    margin-right: -10px;
+}
+
+.span2 {
+    color: rgb(253, 163, 73);
+}
+
+.span3 {
+    color: rgb(208, 49, 158);
+}
+
+
+
+.content2 {
+    width: calc(100% - 100px);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    min-height: 300px;
+    min-width: 250px; 
+    height: 50vh;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    user-select: color green;
+}
+
+::selection {
+    background-color: var(--text-color); 
+    color: var(--bg-color); 
+}
+
+
+.clock, .dateWeek {
+    margin: 0;
+    padding: 0;
+    padding: 5px;
+    text-wrap: nowrap;
+}
+
+.clock {
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+.dateWeek {
+    margin-top: -8px;
+}
+
+
+.mainContent {
+    display: grid;
+    grid-template-rows: 40px 1fr 50px;
+}
+
+header {
+    border: solid var(--text-color);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 10px 5px 20px var(--box-shadow);
+}
+
+.picker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+}
+
+.mid {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+select {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    color: var(--text-color);
+}
+
+.option {
+    background-color: var(--button-bg);
+    color: var(--button-color) ;
+    backdrop-filter: blur(5px);
+}
+
+.pickerList {
+    margin-left: 10px;
+    border: none;
+}
+
+.timeContainer {
+    border: solid var(--text-color);
+    margin-bottom: 10px;
+    border-top: none;
+}
+
+.buttons, .buttonsTimer {
+    border: solid var(--text-color);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    justify-content: end;
+    column-gap: 10px;
+    align-items: center;
+    font-family: monospace;
+    padding-right: 20px;
+    box-shadow: 10px 5px 20px var(--box-shadow);
+}
+
+.buttons button, .buttonsTimer button {
+    position: relative;
+    padding: 5px 10px 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+
+.buttons button:hover,
+.buttonsTimer button:hover {
+    border-radius: 10px;
+}
+
+.buttons .start, 
+.buttonsTimer .startTimer {
+    background-color: hsl(115, 100%, 40%);
+    color: black;
+}
+
+.buttons .start:hover,
+.buttonsTimer .startTimer:hover {
+    background-color: rgba(78, 184, 78, 0.9);
+}
+
+.buttons .lap, 
+.buttons .reset,
+.buttonsTimer .cancel {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+}
+
+.buttons .lap {
+    visibility: hidden;
+    position: absolute;
+}
+
+.buttons .resume,
+.buttonsTimer .resumeTimer {
+    background-color: rgb(57, 43, 137);
+    color: white;
+}
+
+.buttons .resume:hover,
+.buttonsTimer .resumeTimer:hover {
+    background-color: rgba(57, 43, 137, 0.9);
+}
+
+.buttons .stop,
+.buttonsTimer .pause {
+    background-color: rgb(187, 83, 46);
+    color: white;
+}
+
+.buttons .stop:hover,
+.buttonsTimer .pause:hover {
+    background-color: rgba(187, 83, 46, 0.9);
+}
+
+.buttons .reset,
+.buttons .stop,
+.buttons .resume,
+.buttonsTimer,
+.buttonsTimer .cancel,
+.buttonsTimer .resumeTimer,
+.buttonsTimer .pause {
+    visibility: hidden;
+    position: absolute;
+}
+
+.timeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeCounter {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeCounterLap {
+    font-weight: normal;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    visibility: hidden;
+    position: absolute;
+}
+
+.jsContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 20px 1fr;
+    padding-top: 10px;
+    max-height: 200px;
+}
+
+.jsContainer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jsLaps {
+    margin-top: 20px;
+    overflow: auto;
+    overflow-x: hidden;
+    scrollbar-width : thin;  
+    scrollbar-color : var(--text-color) rgba(0,0,0,0);  
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    max-height: 150px;
+
+    visibility: hidden;
+    position: absolute;
+    padding-left: 6%;
+    padding-right: 4%;
+}
+
+table {
+    width: 300px;
+    border-collapse: collapse;
+}
+
+th, td {
+    font-size: 12px;
+    font-weight: normal;
+    padding: 2px;
+    opacity: 0.5;
+    text-align: center;
+    vertical-align: top;
+}
+
+.col3 {
+    text-align: center;
+}
+
+thead, th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-bottom: 10px;
+    backdrop-filter: blur(50px);
+    font-weight: bold;
+}
+
+td {
+    padding: 4px;
+}
+
+
+.timerContainer {
+    border: solid var(--text-color);
+    margin-bottom: 10px;
+    border-top: none;
+    padding-top: 20px;
+    
+    visibility: hidden;
+    position: absolute;
+    user-select: none;
+}
+
+.beforeStart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    padding: 20px 5% 0px 5%;
+    user-select: none;
+}
+
+.startRun {
+    display: grid;
+    height: 100%;
+    justify-content: center;
+
+    visibility: hidden;
+    position: absolute;
+}
+
+.circle {
+    border: solid hsl(115, 100%, 40%);
+    border-radius: 100%;
+    width: 200px;
+    min-height: 150px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: auto;
+    height: 60px;
+    scrollbar-width: none;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 24px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll1, .scroll2, .scroll3 {
+    height: 100px;
+    user-select: none;
+    position: relative;
+}
+
+ul::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+li {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.blurTop, .blurBottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 34px;
+    backdrop-filter: blur(1.5px);
+    z-index: 1;
+}
+
+.blurBottom {
+    bottom: 0;
+}
+
+.blurTop {
+    top: 0;
+}
+
+.timerContainer span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.innerScroll1,
+.innerScroll2,
+.innerScroll3  {
+    position: relative;
+    overflow: hidden;
+}
+
+span[class="label"] {
+    z-index: 2;
+    font-size: 12px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0.8;
+    top: -15px;
+    font-weight: normal;
+}
+
+@media (max-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 4fr;
+        row-gap: 20px;
+        padding-top: 10%;
+        padding-bottom: 20%;
+        overflow: auto;
+    }
+
+    .span1 {
+        font-size: 6rem;
+    }
+
+    .title {
+        font-size: 4rem;
+    }
+
+    .subTitle {
+        top: 8%;
+        left: 2%;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .developer {
+        font-size: 11px;
+        margin-top: -18px;
+    }
+
+    .developer button {
+        top: 15px;
+    }
+
+    .design {
+        height: 60px;
+        bottom: 25px;
+    }
+}
+
+@media (max-width: 350px) {
+    .content2 {
+       width: 100%;
+    }
+}
